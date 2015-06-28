@@ -1,0 +1,6 @@
+/.vagrant/
+/ember-note/bower_components/*
+/ember-note/node_modules
+/ember-note/tmp
+/ember-note/dist
+/ember-note/*.log

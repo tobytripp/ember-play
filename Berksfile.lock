@@ -1,0 +1,15 @@
+DEPENDENCIES
+  emberjs
+    path: cookbooks/emberjs
+  nodejs (= 1.3.0)
+
+GRAPH
+  apt (2.7.0)
+  build-essential (2.2.3)
+  emberjs (0.1.0)
+    nodejs (~> 1.3.0)
+  nodejs (1.3.0)
+    apt (>= 0.0.0)
+    build-essential (>= 0.0.0)
+    yum (>= 0.0.0)
+  yum (3.6.1)

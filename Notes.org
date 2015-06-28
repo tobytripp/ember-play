@@ -1,0 +1,42 @@
+* Deliver Audacious Web Apps with Ember 2.0
+
+  So, the title sucks…
+
+** Starting the App
+
+   #+BEGIN_SRC sh
+   ember new ember-note
+   #+END_SRC
+
+   This usually fails with a File-not-found error.  Do this to
+   continue:
+
+   #+BEGIN_SRC sh
+   cd ember-note
+   ember init
+   #+END_SRC
+
+   It picks up from where `new` left off.  Takes forever.
+
+   Then the init call will fail due to unresolved bower dependencies.
+
+   #+BEGIN_SRC sh
+   bower install
+   #+END_SRC
+
+** Installing Bootstrap
+
+   #+BEGIN_SRC sh
+   bower install bootstrap --save
+   #+END_SRC
+
+   Why yes, the package manager _does_ have a package manager.  😒 It
+   also has an unstated dependency on git.
+
+** Update the "Brocfile"
+
+   #+BEGIN_SRC js :tangle ember-note/Brocfile.js
+     app.import( "bower_components/bootstrap/dist/css/bootstrap.css");
+     app.import( "bower_components/bootstrap/dist/css/bootstrap.css.map" );
+   #+END_SRC
+
