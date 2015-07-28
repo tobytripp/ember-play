@@ -5,15 +5,15 @@
 ** Starting the App
 
    #+BEGIN_SRC sh
-   ember new ember-note
+     ember new ember-note
    #+END_SRC
 
    This usually fails with a File-not-found error.  Do this to
    continue:
 
    #+BEGIN_SRC sh
-   cd ember-note
-   ember init
+     cd ember-note
+     ember init
    #+END_SRC
 
    It picks up from where `new` left off.  Takes forever.
@@ -21,22 +21,49 @@
    Then the init call will fail due to unresolved bower dependencies.
 
    #+BEGIN_SRC sh
-   bower install
+     bower install
    #+END_SRC
 
 ** Installing Bootstrap
 
    #+BEGIN_SRC sh
-   bower install bootstrap --save
+     bower install bootstrap --save
    #+END_SRC
 
-   Why yes, the package manager _does_ have a package manager.  😒 It
+   Why yes, the package manager _does_ have a package manager.  It
    also has an unstated dependency on git.
 
 ** Update the "Brocfile"
 
    #+BEGIN_SRC js :tangle ember-note/Brocfile.js
-     app.import( "bower_components/bootstrap/dist/css/bootstrap.css");
+     app.import( "bower_components/bootstrap/dist/css/bootstrap.css" );
      app.import( "bower_components/bootstrap/dist/css/bootstrap.css.map" );
    #+END_SRC
 
+** Other packages
+
+   The book sets up http mocks using these packages:
+
+   #+BEGIN_SRC sh
+   npm install nedb --save-dev
+   npm install body-parser --save-dev
+   #+END_SRC
+
+   Which allow the use of this generator:
+
+   #+BEGIN_SRC sh
+     ember generate http-mock users
+   #+END_SRC
+
+*** Mirage
+
+    An alternative to =ember serve= that doesn't require a running
+    Node server.
+
+    #+BEGIN_SRC sh
+      ember install ember-cli-mirage
+    #+END_SRC
+
+** Markdown Support
+
+   
